@@ -12,6 +12,7 @@ import SignOutContainer from '../auth/components/SignOutContainer';
 import Dashboard from '../dashboard/components/Dashboard';
 import AdminDashboard from '../admin-dashboard/components/AdminDashboard';
 import NotFound from '../not-found/components/NotFound';
+import Settings from '../settings/components/Settings';
 
 export default () => (
   <div>
@@ -21,6 +22,7 @@ export default () => (
       <AdminOnlyRoute exact path="/admin-dashboard" component={AdminDashboard} />
       <PrivateOnlyRoute exact path="/signout" component={SignOutContainer} />
       <PrivateOnlyRoute exact path="/dashboard" component={Dashboard} />
+      <PrivateOnlyRoute exact path="/settings" component={Settings} />
       <Route exact path="/" component={Landing} />
       <Route component={NotFound} />
     </Switch>

@@ -14,7 +14,6 @@ import {
 } from './actionTypes';
 import * as api from './services';
 
-// fetch curently signed in user
 export const fetchUser = () => async (dispatch) => {
   dispatch({ type: FETCH_CURRENT_USER_START });
   try {
@@ -28,7 +27,7 @@ export const fetchUser = () => async (dispatch) => {
 export const signInWithEmail = ({ email, password }) => async (dispatch) => {
   dispatch({ type: SIGN_IN_USER_START });
   try {
-    const data = api.signInWithEmail({ email, password });
+    const data = await api.signInWithEmail({ email, password });
     dispatch({ type: SIGN_IN_USER_SUCCESS, payload: data });
   } catch (e) {
     dispatch({ type: SIGN_IN_USER_ERROR, payload: 'There was a problem signing in' });
@@ -38,17 +37,17 @@ export const signInWithEmail = ({ email, password }) => async (dispatch) => {
 export const signUpWithEmail = ({ email, password, confirmPassword }) => async (dispatch) => {
   dispatch({ type: SIGN_UP_USER_START });
   try {
-    const data = api.signUpWithEmail({ email, password, confirmPassword });
+    const data = await api.signUpWithEmail({ email, password, confirmPassword });
     dispatch({ type: SIGN_UP_USER_SUCCESS, payload: data });
   } catch (e) {
     dispatch({ type: SIGN_UP_USER_ERROR, payload: 'There was a problem signing up' });
   }
 };
 
-// sign out curently signed in user
 export const signOut = (push) => async (dispatch) => {
   dispatch({ type: SIGN_OUT_USER_START });
   try {
+    await api.signOut();
     dispatch({ type: SIGN_OUT_USER_SUCCESS });
     push('/');
   } catch (e) {
