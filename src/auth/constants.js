@@ -1,3 +1,3 @@
-export const SIGN_IN_WITH = {
+export const AUTH_METHOD = {
   EMAIL_AND_PASSWORD: 'EMAIL_AND_PASSWORD',
 };
