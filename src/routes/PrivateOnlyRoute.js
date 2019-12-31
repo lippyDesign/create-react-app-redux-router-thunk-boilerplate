@@ -12,7 +12,7 @@ const PrivateOnlyRoute = ({ component: Component, isAuthenticated, ...rest }) =>
   />
 }
 
-const mapStateToProps = ({ authReducer: { user } }) => {
+const mapStateToProps = ({ auth: { user } }) => {
   return { isAuthenticated: !!user };
 }
 

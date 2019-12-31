@@ -1,0 +1,3 @@
+export const SIGN_IN_WITH = {
+  EMAIL_AND_PASSWORD: 'EMAIL_AND_PASSWORD',
+};

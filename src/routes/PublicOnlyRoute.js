@@ -13,7 +13,7 @@ const PublicOnlyRoute = ({ component: Component, isAuthenticated, ...rest }) => 
   />
 }
 
-const mapStateToProps = ({ authReducer: { user } }) => {
+const mapStateToProps = ({ auth: { user } }) => {
   console.log(user)
   return { isAuthenticated: !!user };
 }

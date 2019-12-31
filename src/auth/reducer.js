@@ -6,11 +6,13 @@ import {
   SIGN_OUT_USER_SUCCESS,
   SIGN_OUT_USER_ERROR,
 } from './actionTypes';
+import { SIGN_IN_WITH } from './constants';
 
 const INITIAL_STATE = {
   isLoading: false,
   user: null,
   error: '',
+  signInWithScreen: SIGN_IN_WITH.EMAIL_AND_PASSWORD,
 };
 
 export default (state = INITIAL_STATE, action) => {

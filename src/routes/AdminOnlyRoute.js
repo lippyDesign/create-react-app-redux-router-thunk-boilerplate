@@ -12,7 +12,7 @@ const AdminOnlyRoute = ({ component: Component, isAdmin, ...rest }) => {
   />
 }
 
-const mapStateToProps = ({ authReducer: { user } }) => {
+const mapStateToProps = ({ auth: { user } }) => {
   return { isAdmin: user && user.role === 'admin' };
 }
 
